@@ -6,7 +6,7 @@ Terraform by HashiCorp, an AWS Partner Network (APN) Advanced Technology Partner
 
 ### 1.1 Install the Terraform using official Package distribution
 
-Ubuntu
+#### Ubuntu
 
 1 Update apt-get package manager
 ```
@@ -24,7 +24,7 @@ sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(l
 sudo apt-get update && sudo apt-get install terraform  
 ```
 
-Centos
+#### Centos
 
 1 Install yum-config-manager
 ```
@@ -38,4 +38,8 @@ sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashi
 ```
 sudo yum -y install terraform
 ```
-
+### Verify the Terraform installation on Ubuntu
+You can confirm the installation by running the following command
+```
+terrafrom -v 
+```
