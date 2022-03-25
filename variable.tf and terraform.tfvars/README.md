@@ -131,6 +131,14 @@ variable "instance_type" {
 variable "environment_name" {
 }
 ```
+
+create your stage.tfvars for staging
+```
+instance_type="t2.micro"
+
+environment_name ="stage" 
+```
+
 Apply the terraform configuration using following command -
 
 ```
