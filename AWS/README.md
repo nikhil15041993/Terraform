@@ -54,6 +54,25 @@ resource "aws_instance" "ec2_example" {
 }
 ```
 
+
+```
+provider "aws" {
+  region     = "ap-south-1"
+  access_key = "AKIARWRRPWFWQVJQ64LP"
+  secret_key = "ync0Rzcah0PTKDGPxEFA6MLKOT5oToG+am5JyL0T"
+} 
+
+resource "aws_instance" "ec2_example" {
+    ami = "ami-0851b76e8b1bce90b"
+    instance_type = "t2.micro"
+    tags = {
+        Name = "Terraform EC2"
+    }
+}
+
+```
+
+
 ## 4. terraform commands
 
 The first command which we are going to run is -
