@@ -7,7 +7,7 @@ Terraform by HashiCorp, an AWS Partner Network (APN) Advanced Technology Partner
 ### 1.1 Install the Terraform using official Package distribution
 
 Ubuntu
-```
+
 1 Update apt-get package manager
 ```
 sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl 
