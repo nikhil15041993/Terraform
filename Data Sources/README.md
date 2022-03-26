@@ -86,7 +86,7 @@ terraform init
 ```
 ```
 terraform plan
-```BASH
+```
 ```
 terraform apply
 ```
