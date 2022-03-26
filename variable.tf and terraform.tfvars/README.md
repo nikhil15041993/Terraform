@@ -12,15 +12,32 @@ provider "aws" {
 }
 
 resource "aws_instance" "ec2_example" {
+    ami = "ami-0851b76e8b1bce90b"
+    instance_type = var.instance_type
+    vpc_security_group_ids = [aws_security_group.instance.id]
+    tags = {
+        Name = "Terraform EC2"
+    }
+}
+resource "aws_security_group" "instance" {
+    name = "terraform-example-instance"
+     description = "Web Security Group"
+    
+    ingress {
+    from_port = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
 
-   ami           = "ami-0767046d1677be5a0"
-   instance_type =  var.instance_type
+}
 
-   tags = {
-           Name = "Terraform EC2"
-   }
-} 
-
+    egress {
+    from_port = 0
+    to_port = 0
+    protocol = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+}
+}
 ```
 ### Step 2 create variable.tf
 
@@ -60,14 +77,32 @@ provider "aws" {
 }
 
 resource "aws_instance" "ec2_example" {
+    ami = "ami-0851b76e8b1bce90b"
+    instance_type = var.instance_type
+    vpc_security_group_ids = [aws_security_group.instance.id]
+    tags = {
+        Name = "Terraform EC2"
+    }
+}
+resource "aws_security_group" "instance" {
+    name = "terraform-example-instance"
+     description = "Web Security Group"
+    
+    ingress {
+    from_port = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
 
-   ami           = "ami-0767046d1677be5a0"
-   instance_type =  var.instance_type
+}
 
-   tags = {
-           Name = "Terraform EC2"
-   }
-} 
+    egress {
+    from_port = 0
+    to_port = 0
+    protocol = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+}
+}
 
 ```
 Now create variable.tf but without any default values
@@ -121,6 +156,26 @@ resource "aws_instance" "ec2_example" {
    }
 
 } 
+
+resource "aws_security_group" "instance" {
+    name = "terraform-example-instance"
+     description = "Web Security Group"
+    
+    ingress {
+    from_port = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+
+}
+
+    egress {
+    from_port = 0
+    to_port = 0
+    protocol = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+}
+}
 ```
 ### step 2  create your variable.tf
 
