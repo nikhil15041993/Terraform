@@ -1,5 +1,7 @@
 Terraform data sources can be beneficial if you want to retrieve or fetch the data from the cloud service providers such as AWS, AZURE, and GCP.
 
+![image](https://user-images.githubusercontent.com/87381349/160249242-ca8588ec-f855-4c09-ac79-5b936b87b936.png)
+
 
 ## 1. Create an aws_instance
 
