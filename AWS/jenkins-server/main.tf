@@ -54,6 +54,18 @@ resource "aws_security_group" "instance" {
 
 
 
+data "aws_instance" "myawsinstance" {
+      filter {
+  
+       name = "instance.group-id"
+       values = ["sg-00dfb5dbb13c60eee"]
+
+  }
+   depends_on = [
+        "aws_instance.ec2_example"
+      ]
+  }
+
 
 
 
